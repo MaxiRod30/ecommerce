@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
+import NavBar from './components/Navbar/Navbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
-        <Navbar/>
+        <NavBar />
+        <ItemListContainer greeting={"Bienvenido a ElectroMax!"}/>
     </div>
   );
 }
