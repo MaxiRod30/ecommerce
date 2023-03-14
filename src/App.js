@@ -15,7 +15,7 @@ function App() {
         <button onClick={()=> setView('bananas')}>Bananas</button>
 
       </div>
-        {/* <Navbar/> */}
+        <Navbar/>
         {view =='manzanas' && <Counter title='Manzanas' min='5' max='10' />}
         {view =='naranjas' &&<Counter title='Naranja' min='1' max='20' />}
         {view =='bananas' &&<Counter title='Banana' min='1' max='20' />}
