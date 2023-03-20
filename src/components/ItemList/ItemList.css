@@ -1,0 +1,19 @@
+.itemList{
+    background-color: initial;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 10%; 
+}
+.columna{
+
+    margin-top: 1%;
+}
+
+.item{
+
+    flex: 1 0;
+    width: 100%;
+    border-color: gray;
+    margin: 5%;
+}

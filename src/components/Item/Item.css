@@ -1,0 +1,60 @@
+.item_img {
+    -webkit-filter: drop-shadow(8px 8px 5px var(--clr-mid-grey));
+    filter: drop-shadow(8px 8px 5px var(--clr-mid-grey));
+    margin-left: 1.5rem;
+    max-width: 180px;
+    height: 220px;
+    padding: 0.3rem;
+}
+img:hover{
+    transform: scale(1.2);
+}
+.favorite {
+
+    color: gray;
+    font-size: 1.3rem;
+    height: 30px;
+    left: 12.4rem;
+    padding: 0px;
+    position: absolute;
+    top: 1rem;
+    width: 30px;
+}
+
+.toggle-favorite {
+    color: rgb(20, 57, 220);
+}
+
+.line{
+    background-color: var(--light-black-transparent);
+    height: 1px;
+    margin: 8px -10px 12px;
+    width: 110%; 
+}
+
+#item {
+    border-color: blue;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: var(--rnd-med);
+    box-shadow: 0 0 4px var(--grey-transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    padding: 0.3rem 0.8rem;
+    position: relative;
+    transition: all .2s ease-in-out;
+    width: 260px;
+}
+#btnAgregarCarrito{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.conteinerText{
+
+    width: 100%;
+    height: 8em;
+}
