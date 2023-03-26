@@ -6,9 +6,7 @@
     height: 220px;
     padding: 0.3rem;
 }
-img:hover{
-    transform: scale(1.2);
-}
+
 .favorite {
 
     color: gray;
@@ -26,18 +24,20 @@ img:hover{
 }
 
 .line{
-    background-color: var(--light-black-transparent);
+    background-color: rgba(92, 92, 92, 0.2);
     height: 1px;
     margin: 8px -10px 12px;
     width: 110%; 
 }
 
-#item {
-    border-color: blue;
+.item {
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 400ms ease;
     align-items: flex-start;
     background-color: #fff;
-    border-radius: var(--rnd-med);
-    box-shadow: 0 0 4px var(--grey-transparent);
+    border-radius: 2%;
+    box-shadow: 2px 2px 4px rgba(1, 20, 104, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,14 +47,49 @@ img:hover{
     transition: all .2s ease-in-out;
     width: 260px;
 }
-#btnAgregarCarrito{
-    justify-content: center;
+.item:hover{
+    box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
+
+}
+.btnClass{
+    
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
+}
+
+.btnDetalles{
+    border-radius: 8%;
     margin-bottom: 1em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    height: 50%;
+    width: 60%;
+}
+
+.btnDetalles:hover{
+    background-color: #4ca3af; /* Green */
+    color: rgb(206, 19, 175);
+    box-shadow: 8px 8px 50px rgba(110, 42, 42, 0.4);
 }
 
 .conteinerText{
 
     width: 100%;
-    height: 8em;
+    height: 6em;
+}
+
+.textName{
+    text-align: center;
+    font: 100% sans-serif;
+    height: 50px;
+
+}
+.textPrice{
+    text-align: center;
+    font: 120% sans-serif;
+    height: 100%;
+    width: 100%;
+    
 }

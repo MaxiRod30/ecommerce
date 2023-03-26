@@ -3,17 +3,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 10%; 
+    margin-left: 1%; 
+    
 }
 .columna{
 
     margin-top: 1%;
 }
 
-.item{
-
-    flex: 1 0;
-    width: 100%;
-    border-color: gray;
-    margin: 5%;
+.itemL{
+    flex: 2 0;
 }

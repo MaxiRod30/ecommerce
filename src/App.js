@@ -7,7 +7,8 @@ function App() {
   return (
     <div className="App">
         <NavBar />
-        <ItemListContainer greeting={"Bienvenido a ElectroMax!"}/>
+        <ItemListContainer greeting={"Productos"}/>
+        
     </div>
   );
 }
