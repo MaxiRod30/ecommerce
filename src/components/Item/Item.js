@@ -1,7 +1,7 @@
 import "./Item.css"
-
+import { Link, NavLink } from 'react-router-dom'
   
-const Item = ({ name, img, price , stock , brand}) => {
+const Item = ({ id, name, img, price , stock , brand}) => {
     return (
                     <div  className="item">
                         <div className="favorite">
@@ -19,8 +19,7 @@ const Item = ({ name, img, price , stock , brand}) => {
                             
                         </div>
                         <div className="btnClass">
-                            <button className="btnDetalles"><span>Detalles</span></button>
-                            
+                            <Link to={`/item/${id}`} className='btnDetalles'>Ver detalle</Link>
                     </div>
                 </div>
 
