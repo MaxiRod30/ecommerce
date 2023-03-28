@@ -25,6 +25,9 @@ const ItemDetail = ({ id, name, img, category, brand,description, price, stock }
                     Categoria: {category}
                 </p>
                 <p className="Info">
+                    Marca: {brand}
+                </p>
+                <p className="Info">
                     Descripción: {description}
                 </p>
                 <p className="Info">

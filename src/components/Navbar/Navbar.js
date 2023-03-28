@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { BsSearchHeart } from '../../../node_modules/react-icons/bs';
 import { GiBattleAxe } from '../../../node_modules/react-icons/gi';
 
+
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-red navbar-dark">
@@ -36,7 +37,8 @@ const NavBar = () => {
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to="/search" className="nav-link" ><BsSearchHeart size={22} /></NavLink>
+                           
+                            {/* <NavLink to="/search" className="nav-link" ><BsSearchHeart size={22} /></NavLink> */}
                         </li>
                     </ul>
                     <div className="d-flex flex-column sim navbar-carrito">

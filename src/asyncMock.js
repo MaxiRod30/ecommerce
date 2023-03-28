@@ -189,10 +189,10 @@ export const getProducts = () => {
     })
 }
 
-export const getProductsByCategory = (categoryId) => {
+export const getProductsByBrand = (brandId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.filter(prod => prod.category === categoryId))
+            resolve(products.filter(prod => prod.brand === brandId))
         }, 1000)
     })
 }

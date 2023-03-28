@@ -1,16 +1,29 @@
 .itemList{
     background-color: initial;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 1%; 
-    
+    flex-direction: row;
+
 }
+
 .columna{
 
     margin-top: 1%;
 }
 
+.listItems{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
 .itemL{
     flex: 2 0;
+    
+}
+ 
+.filterCard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 1px;
 }
