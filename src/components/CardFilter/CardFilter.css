@@ -1,13 +1,14 @@
 .filterMenu{
-  
-  background: #ff8d01;
-  height: 200em;
+  border-radius: 4px;
+  background: #e0dedb;
+  height: 50em;
   width: 200px;
   display:flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin-top: 1em;
   
 }
 .filter_logo{
@@ -27,4 +28,31 @@
 
 .filter_toggle{
   display: none;
+}
+
+.ActiveOption{
+  margin:15px;
+  background-color: #555555;
+  color: white;
+  position:relative;
+  display: block;
+  text-decoration: none;
+}
+
+.Option{
+  margin:15px;
+  color:white;
+  position:relative;
+  display: block;
+  text-decoration: none;
+  background-color: #e0dedb;
+  color: black;
+  border: 0px solid #555555;
+  height: auto;
+  width: 200px;
+}
+
+.Option:hover {
+  background-color: #555555;
+  color: white;
 }

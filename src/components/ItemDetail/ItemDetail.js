@@ -1,4 +1,4 @@
-import './ItemDetail.css'
+import './ItemDetail2.css'
 import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({ id, name, img, category, brand,description, price, stock }) => {
@@ -11,34 +11,38 @@ const ItemDetail = ({ id, name, img, category, brand,description, price, stock }
     }
 
     return (
-        <article className="CardItem">
-            <header className="Header">
-                <h2 className="ItemHeader">
-                    {name}
-                </h2>
-            </header>
-            <picture>
-                <img src={"/asset/"+brand+"/"+img} alt={name} className="ItemImg"/>
-            </picture>
-            <section>
-                <p className="Info">
-                    Categoria: {category}
-                </p>
-                <p className="Info">
-                    Marca: {brand}
-                </p>
-                <p className="Info">
-                    Descripción: {description}
-                </p>
-                <p className="Info">
-                    Precio: ${price}
-                </p>
-            </section>           
-            <footer className='ItemFooter'>
-                <ItemCount onAdd={handleOnAdd} stock={stock} />
-            </footer>
-        </article>
+        <div className="product">
+            <div className="product__photo">
+                <div className="photo-container">
+                    <div className="photo-main">
+                        <img src={"/asset/"+brand+"/"+img} alt={description}></img>
+                    </div>
+                </div>
+            </div>
+            <div className="product__info">
+                <div className="title">
+                    <h1>{name}</h1>
+                    <span>COD: {id}</span>
+                </div>
+                <div className="price">
+                    $ <span>{price}</span>
+                </div>
+                <div className="description">
+                    <h4>Caracteristicas</h4>
+                    <ul>
+                        <p>{brand}</p>
+                        <p>{category}</p>
+                        <p>{description}</p>
+                    </ul>
+                </div>
+                <footer className='ItemFooter'>
+                    <p className="TitleCantidad">Cantidad</p>
+                    <ItemCount onAdd={handleOnAdd} stock={stock} />
+                </footer>
+            </div>
+        </div>
     )
 }
 
 export default ItemDetail
+

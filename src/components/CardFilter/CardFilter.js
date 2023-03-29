@@ -1,17 +1,17 @@
 import "./CardFilter.css"
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const CartFilter = () => {
     return(
         
             <div className="filterMenu">
                 <div className="filter_logo"></div>
-                <h3>Filtro por marca: </h3>
+                <h5>Filtro por marca: </h5>
                 <div className="filter_items">
-                    <Link to={"/brand/DL"} className="filter_items" >DL</Link>
-                    <Link to={"/brand/Adidas"} className="filter_items" >Adidas</Link>
-                    <Link to={"/brand/Nike"} className="filter_items" >Nike</Link>
-                    <Link to={"/brand/Puma"} className="filter_items" >Puma</Link>
+                    <NavLink to={"/brand/DL"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >DL</NavLink>
+                    <NavLink to={"/brand/Adidas"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >Adidas</NavLink>
+                    <NavLink to={"/brand/Nike"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >Nike</NavLink>
+                    <NavLink to={"/brand/Puma"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >Puma</NavLink>
                 </div>
             </div>
         

@@ -15,6 +15,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
+    
 }
 .itemL{
     flex: 2 0;

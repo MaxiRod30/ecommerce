@@ -1,5 +1,5 @@
 import "./Item.css"
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
   
 const Item = ({ id, name, img, price , stock , brand}) => {
     return (
@@ -19,7 +19,7 @@ const Item = ({ id, name, img, price , stock , brand}) => {
                             
                         </div>
                         <div className="btnClass">
-                            <Link to={`/item/${id}`} className='btnDetalles'>Ver detalle</Link>
+                            <Link to={`/item/${id}`} className='btnDetalles'>Detalles</Link>
                     </div>
                 </div>
 

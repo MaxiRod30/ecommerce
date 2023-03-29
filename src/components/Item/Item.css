@@ -31,6 +31,7 @@
 }
 
 .item {
+    
     box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     cursor: default;
     transition: all 400ms ease;
@@ -46,6 +47,7 @@
     position: relative;
     transition: all .2s ease-in-out;
     width: 260px;
+   
 }
 .item:hover{
     box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
@@ -57,21 +59,25 @@
     height: 100%;
     display: flex;
     justify-content: center;
+
 }
 
 .btnDetalles{
-    border-radius: 8%;
+    text-decoration:none;
+    border-radius: 2px;
     margin-bottom: 1em;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     height: 50%;
     width: 60%;
+    color: black;
+    border: 2px solid #555555;
+    
 }
 
 .btnDetalles:hover{
-    background-color: #4ca3af; /* Green */
-    color: rgb(206, 19, 175);
-    box-shadow: 8px 8px 50px rgba(110, 42, 42, 0.4);
+    background-color: #555555;
+    color: white;
 }
 
 .conteinerText{
