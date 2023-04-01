@@ -7,7 +7,7 @@ import ItemSomosNosotros from './components/ItemSomosNosotros/ItemSomosNosotros'
 import ItemEventos from './components/ItemEventos/ItemEventos';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemContactenos from './components/ItemContactenos/ItemContactenos';
-import Footer from './Footer/Footer';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
