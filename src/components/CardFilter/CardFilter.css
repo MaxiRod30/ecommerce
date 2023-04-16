@@ -56,3 +56,39 @@
   background-color: #555555;
   color: white;
 }
+.navDrop{
+
+  color: black;
+}
+
+.bg-conteinerCard{
+  color:#fff;
+  font-family: 'Allerta Stencil', sans-serif;
+  margin-bottom: 4px;
+  font-size: 22px;
+  border: 0.3rem solid rgba(206, 50, 220, 0.6);
+  border-radius: 1rem;
+}
+.textDrop{
+
+  color: black;
+  font-size: 20px;
+  margin-left: 2rem ;
+}
+
+.conteinerTitule{
+
+  color: black;
+  text-decoration: none;
+}
+
+
+@media (max-width: 595px){
+  .bg-conteinerCard{
+      margin: 0 0em 0 0em;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+  }
+}

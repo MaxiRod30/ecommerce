@@ -47,6 +47,7 @@
     position: relative;
     transition: all .2s ease-in-out;
     width: 260px;
+    cursor: pointer;
    
 }
 .item:hover{

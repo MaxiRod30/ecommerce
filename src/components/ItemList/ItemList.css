@@ -1,9 +1,3 @@
-.itemList{
-    background-color: initial;
-    display: flex;
-    flex-direction: row;
-
-}
 
 .columna{
 
@@ -27,4 +21,29 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-left: 1px;
+}
+
+@media (max-width: 595px){
+    .itemList{
+        margin: 0 0rem 0 0em;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: column;
+    }
+    .listItems{
+        align-items: center;
+        flex-direction: column !important;
+    }
+}
+@media (min-width: 595px){
+    .itemList{
+        background-color: initial;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        margin: 0 10em 0 10em;
+    }
+
 }

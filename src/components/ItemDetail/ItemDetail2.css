@@ -1,35 +1,28 @@
 /* ----- Variables ----- */
 /* ----- Product Section ----- */
-.product {
-  display: grid;
-  grid-template-columns: 0.9fr 1fr;
-  margin: auto;
-  padding: 2.5em 0;
-  min-width: 600px;
-  background-color: white;
-  border-radius: 5px;
-}
 
 /* ----- Photo Section ----- */
 .product__photo {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+
 }
 
 .photo-container {
-  position: absolute;
-  left: -2.5em;
-  display: grid;
-  grid-template-rows: 1fr;
-  width: 100%;
+  width: 80%;
   height: 100%;
   border-radius: 6px;
-  box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+  margin-top: 3rem;
+  
+
 }
 
 .photo-main {
   border-radius: 6px 6px 0 0;
-  background-color: #e06310;
-  background: radial-gradient(#e5f89e, #e08701);
+
 }
 .photo-main .controls {
   display: flex;
@@ -41,11 +34,13 @@
   cursor: pointer;
 }
 .photo-main img {
-  position: absolute;
-  left: -3.5em;
+  /* position: absolute; */
+
   top: 2em;
-  max-width: 110%;
-  filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+
+  height: 100%;
+  width: 90%;
+  filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(132, 37, 141, 0.3));
 }
 
 .photo-album {
@@ -69,6 +64,11 @@
 /* ----- Informations Section ----- */
 .product__info {
   padding: 0.8em 0;
+  width: 80%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
 }
 
 .title h1 {
@@ -124,7 +124,8 @@
 .description ul {
   font-size: 0.8em;
   list-style: disc;
-  margin-left: 1em;
+  margin-left: 0em;
+  padding: 0em;
 }
 .description li {
   text-indent: -0.6em;
@@ -153,7 +154,54 @@
   border-radius: 25;
   font-size: larger;
 }
+.StyleButton {
+  text-decoration: none;
+  margin: 0 30px;
+  width: auto;
+  padding: 12px;
+  font-size: 8px;
+  background: #f53030;
+  border-radius: 8px;
+  display: flex;
+  align-self: center;
+  flex-grow: 0;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  border: none;
+  border-style: none;
+  cursor: pointer;
+  outline: inherit;
+  font-size: larger;
+}
+@media (min-width: 768px) {
+  .product {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    margin-left: 1em;
+    min-width: 800px;
+    padding: 2.5em 0;
+    border-radius: 5px;
+    justify-content: center;
+    box-shadow: 4px 4px 25px -2px rgba(209, 49, 209, 0.5);
+  }
+  
+}
 
+@media (max-width: 768px) {
+
+  .productVista{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 2.5em 0;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 25px -2px rgba(209, 49, 209, 0.5);
+  }
+}
 /* ----- Footer Section ----- */
 footer {
   padding: 1em;
