@@ -5,8 +5,29 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {IoIosArrowDropdown} from 'react-icons/io'
- 
+import { useState, useEffect } from "react"; 
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "../../services/firebase/firebaseConfig";
+
 const CartFilter = () => {
+    const [brand,setBrand] = useState([])
+
+    useEffect(()=>{
+        const brandRef = query(collection(db , "brand"), orderBy('order','asc'))
+        getDocs(brandRef)
+        .then(snapshop =>{
+            const brandAdapted = snapshop.docs.map(doc =>{
+                const data = doc.data()
+                return{ id: doc.id , ...data}
+            })
+            setBrand(brandAdapted)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+    },[])
+
     return(
         <Navbar  bg="conteinerCard" expand="lg"  >
             <Container>
@@ -16,11 +37,12 @@ const CartFilter = () => {
                 <Nav className="me-auto">
                 <NavDropdown title={<span className="textDrop"><IoIosArrowDropdown/> Marcas</span>} id="basic-nav-dropdown " bg="dark">
                     <NavLink to={"/"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >Todos</NavLink>
-                    <NavLink to={"/brand/DL"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >DL</NavLink>
-                    <NavLink to={"/brand/Adidas"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >Adidas</NavLink>
-                    <NavLink to={"/brand/Nike"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >Nike</NavLink>
-                    <NavLink to={"/brand/Puma"} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >Puma</NavLink>
-                </NavDropdown>
+                    {
+                        brand.map(bra => {
+                            return <NavLink key={bra.id} to={`/brand/${bra.slug}`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'} >{bra.label}</NavLink>
+                        })
+                    }
+                    </NavDropdown>
                 </Nav>
             </Navbar.Collapse>
             </Container>

@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import ItemSomosNosotros from './components/ItemSomosNosotros/ItemSomosNosotros';
 import ItemEventos from './components/ItemEventos/ItemEventos';
+import Checkout from './components/Checkout/Checkout';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -14,6 +15,7 @@ import ItemContactenos from './components/ItemContactenos/ItemContactenos';
 import Footer from './components/Footer/Footer';
 import { CartProvider } from './context/CartContext';
 import ListCartConteiner from './components/ListCartContainer/ListCartContainer';
+
 
 function App() {
   return (
@@ -29,7 +31,8 @@ function App() {
           <Route path="/productos" element={<ItemListContainer greeting={'Productos'}/>}/>
           <Route path="/brand/:brandId" element={<ItemListContainer greeting={'Productos filtrados por marca'}/>}/>
           <Route path="/item/:itemId" element={<ItemDetailContainer />}/>
-          <Route path="/cartCarrito" element={<ListCartConteiner />}/>
+          <Route path="/cart" element={<ListCartConteiner />}/>
+          <Route path="/checkout" element={<Checkout/> }/>
         </Routes>
         </CartProvider>
         <Footer/>

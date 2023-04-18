@@ -4,6 +4,9 @@ import { getProducts ,getProductsByBrand } from "../../asyncMock"
 import ItemList from '../ItemList/ItemList'
 import Spinner from 'react-bootstrap/Spinner';
 
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from "../../services/firebase/firebaseConfig"
+
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -12,19 +15,40 @@ const ItemListContainer = ({ greeting }) => {
 
     
     useEffect(() => {
+        setLoading(true)
 
-        const asyncFuction = brandId ? getProductsByBrand : getProducts
+        const productsRef = brandId
+        ? query(collection( db, 'products'),where('brand','==', brandId))
+        : collection( db, 'products')
         
-        asyncFuction(brandId)
-            .then(products => {
-                setProducts(products)
+
+        getDocs(productsRef)
+            .then(snapshop =>{
+                const productsAdapted = snapshop.docs.map(doc =>{
+                    const data = doc.data()
+                    return{ id: doc.id , ...data}
+                })
+                setProducts(productsAdapted)
             })
-            .catch(error =>{
+            .catch(error=>{
                 console.log(error)
             })
             .finally(()=>{
                 setLoading(false)
             })
+
+        // const asyncFuction = brandId ? getProductsByBrand : getProducts
+        
+        // asyncFuction(brandId)
+        //     .then(products => {
+        //         setProducts(products)
+        //     })
+        //     .catch(error =>{
+        //         console.log(error)
+        //     })
+        //     .finally(()=>{
+        //         setLoading(false)
+        //     })
     }, [brandId])
 
     if(loading){

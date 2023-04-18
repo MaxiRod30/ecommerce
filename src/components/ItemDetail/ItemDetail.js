@@ -44,7 +44,7 @@ const ItemDetail = ({ id, name, img, category, brand,description, price, stock }
                         <p className="TitleCantidad">Cantidad</p>
                         {
                             isInCart(id) ? (
-                                <Link className='StyleButton' to='/cartCarrito'>Terminar compra</Link>
+                                <Link className='StyleButton' to='/cart'>Terminar compra</Link>
                             ) : (
                                 <ItemCount onAdd={handleOnAdd} stock={stock} />
                             )

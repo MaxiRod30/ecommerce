@@ -34,7 +34,7 @@ const NavBar = () => {
                             <NavLink to="/contactenos" className="nav-link" >Contactenos</NavLink>
                         </li>
                     </ul>
-                    <div className="d-flex flex-column sim navbar-carrito" onClick={()=>navigation('/cartCarrito')}>
+                    <div className="d-flex flex-column sim navbar-carrito" onClick={()=>navigation('/cart')}>
                         <CartWidget/>
                     </div>
                 </div>
