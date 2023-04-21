@@ -1,10 +1,26 @@
 import { useCart } from "../../context/CartContext"
 import {Link} from 'react-router-dom'
 import "./CartFactura.css"
+import { useNotification } from '../../notification/NotificationService'
 
 const CartFactura = () => {
     const { total, totalQuantity, clearCart } = useCart()
-   
+    const { queryNotification, setNotification} = useNotification()
+
+    const handRemoveCart = () => {
+        queryNotification(`Quieres eliminar todo el carrito?`, "Recuerda revisar nuestros articulos de descuento!","warning")
+        .then((result) => {
+            if(result.isConfirmed){
+                clearCart()
+                setNotification("info",`Se elimino todo el carrito`,"bottom-right",1000)
+            }
+        })
+        .catch(error =>{
+            setNotification("error",`Error sistema ${error}`,"bottom-right",3000)
+        })  
+    }
+
+
     return (
         <>
         <div className="line"></div>
@@ -15,7 +31,7 @@ const CartFactura = () => {
                 <p className="text-center fs-3"> Total: ${total}</p>
                 <div className="d-flex justify-content-center column">
                     <Link className='btn btn-outline-info btn-lg w-100 m-3' to='/checkout'>Checkout</Link>
-                    <button onClick={()=>clearCart()} className="btn btn-outline-danger btn-lg w-100 m-3">Vaciar compra</button>
+                    <button onClick={handRemoveCart} className="btn btn-outline-danger btn-lg w-100 m-3">Vaciar compra</button>
                 </div>
             </aside>
         </div>

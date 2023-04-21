@@ -14,7 +14,8 @@ const ContactForm = ({ onConfirm }) => {
     
     const [ user , setUser] = useState(userData)
     
-    const handleSubmit = () =>{
+    const handleSubmit = (e) =>{
+        e.preventDefault()
         onConfirm(user)
     }
 
@@ -61,8 +62,8 @@ const ContactForm = ({ onConfirm }) => {
                 </div>
             </div>
             <div className="col-12 p-4">
-                <button className="btn btn-primary">Generar Orden</button>
-            </div>
+                <button type="submit" className="btn btn-primary">Generar Orden</button>
+            </div> 
         </form>
         )
 }

@@ -1,8 +1,23 @@
 import "./Cart.css"
 import {Link} from 'react-router-dom'
+import { useNotification } from '../../notification/NotificationService'
 
 const Cart = ({ id, name, description, img, price , stock , brand , quantity, onRemove}) => {
-
+    
+    const { queryNotification, setNotification} = useNotification()
+    
+    const handRemove = () => {
+        queryNotification(`Quieres eliminar ${name} del carrito?`, "Recuerda revisar nuestros articulos de descuento!","warning")
+        .then((result) => {
+            if(result.isConfirmed){
+                onRemove(id)
+                setNotification("info",`Se elimino ${name} del carrito`,"bottom-right",1000)
+            }
+        })
+        .catch(error =>{
+            setNotification("error",`Error sistema ${error}`,"bottom-right",3000)
+        })  
+    }
 
     return (
         <div className="col-md-10 sombra" >
@@ -24,7 +39,7 @@ const Cart = ({ id, name, description, img, price , stock , brand , quantity, on
                     </div>
                     <div className="d-flex flex-column mt-4">
                         <Link className='btn btn-primary btn-sm' to={`/item/${id}`}>Detalles</Link>
-                        <button className="btn btn-outline-danger btn-sm mt-2" onClick={()=>onRemove(id)} type="button">Eliminar producto</button>
+                        <button className="btn btn-outline-danger btn-sm mt-2" onClick={handRemove} type="button">Eliminar producto</button>
                     </div>
                 </div>
             </div>  

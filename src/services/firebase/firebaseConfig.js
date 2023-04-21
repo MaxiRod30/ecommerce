@@ -3,14 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBhQQi5FoxUayTC6nNqDsNnef2VquZSACg",
-  authDomain: "backendropmax.firebaseapp.com",
-  projectId: "backendropmax",
-  storageBucket: "backendropmax.appspot.com",
-  messagingSenderId: "456474045173",
-  appId: "1:456474045173:web:bca7672a265df6da7cb3bc"
+  apiKey: process.env.REACT_APP_apiKey ,
+  authDomain: process.env.REACT_APP_authDomain ,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket ,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
-
 
 const app = initializeApp(firebaseConfig);
 

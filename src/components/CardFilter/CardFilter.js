@@ -1,32 +1,26 @@
 import "./CardFilter.css"
 import { NavLink } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {IoIosArrowDropdown} from 'react-icons/io'
-import { useState, useEffect } from "react"; 
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { db } from "../../services/firebase/firebaseConfig";
+
+import { getBrand } from "../../services/firebase/firestore/brand";
+import { useAsync } from "../../hook/useAsync";
 
 const CartFilter = () => {
-    const [brand,setBrand] = useState([])
 
-    useEffect(()=>{
-        const brandRef = query(collection(db , "brand"), orderBy('order','asc'))
-        getDocs(brandRef)
-        .then(snapshop =>{
-            const brandAdapted = snapshop.docs.map(doc =>{
-                const data = doc.data()
-                return{ id: doc.id , ...data}
-            })
-            setBrand(brandAdapted)
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+    const {data: brand , error , loading} = useAsync(()=> getBrand(), [])
 
-    },[])
+    if(loading){
+        return  <div style={{margin:'12em'}} ><Spinner  animation="border" variant="primary" /></div>
+    }
+    if(error){
+        return  <div style={{margin:'12em'}} ><h1>Error {error}</h1></div>
+    }
+
 
     return(
         <Navbar  bg="conteinerCard" expand="lg"  >
