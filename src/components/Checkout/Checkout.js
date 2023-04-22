@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import ContactForm from "../ContactForm/ContactForm"
 import { getOrder } from "../../services/firebase/firestore/orders"
 import { useNotification } from '../../notification/NotificationService'
+import emailjs from '@emailjs/browser';
 
 const Checkout = () => {
     const {cart, total, clearCart} = useCart()
@@ -25,6 +26,23 @@ const Checkout = () => {
     
             const {orderAdded , outOfStock} = await getOrder(cart, objOrder)  
             if(orderAdded){
+
+                const dataMail ={
+                    message: JSON.stringify(objOrder.items), 
+                    user_buyer: JSON.stringify(objOrder.buyer), 
+                    user_order: orderAdded.id,
+                    user_email: objOrder.buyer.mail,
+                    user_getTotal: objOrder.total
+                }
+
+                emailjs.send(process.env.REACT_APP_YOUR_SERVICE_ID, process.env.REACT_APP_YOUR_TEMPLATE_ID2,dataMail, process.env.REACT_APP_YOUR_PUBLIC_KEY)
+                .then((result) => {
+                    setNotification("success",`Se envio correo con su ID de compra `,"bottom-right",4000)
+                })
+                .catch( (error) => {
+                      setNotification("error",`No se pudo enviar el mail debido a un error ${error.text}`,"bottom-right",3000)
+                  })
+
                 clearCart()
                 setOrderId(orderAdded.id)
                 setNotification("success",`Se realizo la compra con exito, ID: ${orderAdded.id}`,"bottom-right",10000)
