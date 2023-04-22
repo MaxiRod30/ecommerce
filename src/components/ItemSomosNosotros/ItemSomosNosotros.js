@@ -13,8 +13,6 @@ const ItemSomosNosotros = () => {
                     alt="First slide"
                     />
                     <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -25,8 +23,6 @@ const ItemSomosNosotros = () => {
                     />
 
                     <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -37,10 +33,6 @@ const ItemSomosNosotros = () => {
                     />
 
                     <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -51,10 +43,6 @@ const ItemSomosNosotros = () => {
                     />
 
                     <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
                     </Carousel.Caption>
                 </Carousel.Item>
         </Carousel>
@@ -62,30 +50,27 @@ const ItemSomosNosotros = () => {
             <Card className="vistaItem2 vistaItem" >
                 <Card.Img variant="top" src="./asset/SomosNosotros/P5.jpg" />
                 <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Lo mejor</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    Varias variades de ropa para que usted se pruebe.
                 </Card.Text>
                 </Card.Body>
             </Card>
             <Card className="vistaItem2 vistaItem ">
                 <Card.Img variant="top" src="./asset/SomosNosotros/P6.jpg" />
                 <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Variedades de camisetas</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    Varias camisetas con diseños personalidos
                 </Card.Text>
                 </Card.Body>
             </Card>
             <Card className="vistaItem2 vistaItem ">
                 <Card.Img variant="top" src="./asset/SomosNosotros/P7.jpg" />
                 <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Venga a nuestro local</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    Elija y pruébese todo lo que quiera.
                 </Card.Text>
                 </Card.Body>
             </Card>

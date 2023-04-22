@@ -1,5 +1,5 @@
 
-import { BsCart } from '../../../node_modules/react-icons/bs';
+import { BsCart2 } from '../../../node_modules/react-icons/bs';
 import './CardWidget.css'
 import { useCart } from '../../context/CartContext';
 
@@ -8,7 +8,7 @@ const CartWidget = () => {
 
     return(
         <div className ='btnCarrito'>
-            <BsCart className='nav-link'></BsCart> <p className='btnTextCarrito'>{totalQuantity}</p>
+            <BsCart2 className='nav-link mb-1'></BsCart2> <p className='btnTextCarrito'>{totalQuantity}</p>
         </div>
     )
 }
